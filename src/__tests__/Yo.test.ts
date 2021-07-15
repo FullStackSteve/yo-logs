@@ -139,9 +139,7 @@ test('it can req() with a req obj passed for every YoLogType ', () => {
             ` - [${mockDateISOString}] ${YoLogType.SUCCESS} REQ: ${method} ${req.url}`,
         )
         yo.req({ req, type: YoLogType.LOG })
-        expect(console.log).toHaveBeenCalledWith(
-            ` - [${mockDateISOString}] ${YoLogType.LOG} REQ: ${method} ${req.url}`,
-        )
+        expect(console.log).toHaveBeenCalledWith(` - [${mockDateISOString}] ${YoLogType.LOG} REQ: ${method} ${req.url}`)
     })
 })
 
@@ -266,8 +264,6 @@ test('it can req() with a req obj passed for every YoLogType, with a custom mess
             ` - [${id}] ${YoLogType.SUCCESS} ${name}: ${method} ${req.url} ${message}`,
         )
         yo.req({ req, type: YoLogType.LOG, message, name, id })
-        expect(console.log).toHaveBeenCalledWith(
-            ` - [${id}] ${YoLogType.LOG} ${name}: ${method} ${req.url} ${message}`,
-        )
+        expect(console.log).toHaveBeenCalledWith(` - [${id}] ${YoLogType.LOG} ${name}: ${method} ${req.url} ${message}`)
     })
 })
