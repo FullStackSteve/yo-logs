@@ -1,0 +1,55 @@
+{
+  "name": "yo-logs",
+  "version": "1.0.2",
+  "description": "Deceptively simple, awesome JavaScript / TypeScript logger with emojis",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "start": "tsc -w",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "commit": "git-cz",
+    "test": "jest --config jestconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "bump-version": "npm version patch",
+    "publish-public": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesussteve/yo-logs.git"
+  },
+  "keywords": [
+    "yo",
+    "logger",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "log",
+    "logging"
+  ],
+  "author": "Steve Daniels",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jesussteve/yo-logs/issues"
+  },
+  "homepage": "https://github.com/ljesussteve/yo-logs#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.0.5",
+    "@types/jest": "^26.0.24",
+    "jest": "^27.0.1",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.3.5"
+  }
+}
