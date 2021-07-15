@@ -1,4 +1,5 @@
 import { YoLogType } from './constants'
+export * from './constants'
 import { ConsoleLogOutputType, YoLoggerParams, YoReqLoggerParams, YoReqType } from './type'
 
 function out(message: string, data: {} | null, type: ConsoleLogOutputType) {
