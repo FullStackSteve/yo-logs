@@ -74,4 +74,5 @@ export default {
     WARNING: YoLogType.WARNING,
     REDIRECT: YoLogType.REDIRECT,
     NOT_FOUND: YoLogType.NOT_FOUND,
+    WAITING: YoLogType.WAITING,
 }

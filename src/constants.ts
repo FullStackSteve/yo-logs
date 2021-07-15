@@ -5,4 +5,5 @@ export enum YoLogType {
     'WARNING' = '🟡',
     'REDIRECT' = '🔀',
     'NOT_FOUND' = '⛔️',
+    'WAITING' = '🕓',
 }
