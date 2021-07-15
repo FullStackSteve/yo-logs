@@ -270,6 +270,8 @@ test('it can req() with a req obj passed for every YoLogType, with a custom mess
         yo.req({ req, type: YoLogType.LOG, message, name, id })
         expect(console.log).toHaveBeenCalledWith(` - [${id}] ${YoLogType.LOG} ${name}: ${method} ${req.url} ${message}`)
         yo.req({ req, type: YoLogType.WAITING, message, name, id })
-        expect(console.log).toHaveBeenCalledWith(` - [${id}] ${YoLogType.WAITING} ${name}: ${method} ${req.url} ${message}`)
+        expect(console.log).toHaveBeenCalledWith(
+            ` - [${id}] ${YoLogType.WAITING} ${name}: ${method} ${req.url} ${message}`,
+        )
     })
 })
