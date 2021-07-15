@@ -138,6 +138,10 @@ test('it can req() with a req obj passed for every YoLogType ', () => {
         expect(console.log).toHaveBeenCalledWith(
             ` - [${mockDateISOString}] ${YoLogType.SUCCESS} REQ: ${method} ${req.url}`,
         )
+        yo.req({ req, type: YoLogType.LOG })
+        expect(console.log).toHaveBeenCalledWith(
+            ` - [${mockDateISOString}] ${YoLogType.LOG} REQ: ${method} ${req.url}`,
+        )
     })
 })
 
@@ -175,6 +179,10 @@ test('it can req() with a req obj passed for every YoLogType, with a custom mess
         yo.req({ req, type: YoLogType.SUCCESS, message })
         expect(console.log).toHaveBeenCalledWith(
             ` - [${mockDateISOString}] ${YoLogType.SUCCESS} REQ: ${method} ${req.url} ${message}`,
+        )
+        yo.req({ req, type: YoLogType.LOG, message })
+        expect(console.log).toHaveBeenCalledWith(
+            ` - [${mockDateISOString}] ${YoLogType.LOG} REQ: ${method} ${req.url} ${message}`,
         )
     })
 })
@@ -215,6 +223,10 @@ test('it can req() with a req obj passed for every YoLogType, with a custom mess
         expect(console.log).toHaveBeenCalledWith(
             ` - [${mockDateISOString}] ${YoLogType.SUCCESS} ${name}: ${method} ${req.url} ${message}`,
         )
+        yo.req({ req, type: YoLogType.LOG, message, name })
+        expect(console.log).toHaveBeenCalledWith(
+            ` - [${mockDateISOString}] ${YoLogType.LOG} ${name}: ${method} ${req.url} ${message}`,
+        )
     })
 })
 
@@ -252,6 +264,10 @@ test('it can req() with a req obj passed for every YoLogType, with a custom mess
         yo.req({ req, type: YoLogType.SUCCESS, message, name, id })
         expect(console.log).toHaveBeenCalledWith(
             ` - [${id}] ${YoLogType.SUCCESS} ${name}: ${method} ${req.url} ${message}`,
+        )
+        yo.req({ req, type: YoLogType.LOG, message, name, id })
+        expect(console.log).toHaveBeenCalledWith(
+            ` - [${id}] ${YoLogType.LOG} ${name}: ${method} ${req.url} ${message}`,
         )
     })
 })

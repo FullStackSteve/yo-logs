@@ -68,6 +68,7 @@ class Yo {
 
 export default {
     init: () => new Yo(),
+    LOG: YoLogType.LOG,
     SUCCESS: YoLogType.SUCCESS,
     ERROR: YoLogType.ERROR,
     WARNING: YoLogType.WARNING,
